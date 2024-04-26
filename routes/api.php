@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ActivityController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/recomended',[ActivityController::class,'index']);
+Route::post('/activity', [ActivityController::class,'giveActivity']);
+Route::get('/liked/{from_profile_id}',[ActivityController::class,'viewLiked']);
