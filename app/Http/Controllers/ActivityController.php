@@ -24,7 +24,7 @@ class ActivityController extends Controller
      */
     public function index(Request $request)
     {
-        $recomended = User::paginate(5);
+        $recomended = User::paginate(10);
         return $recomended;
     }
 
