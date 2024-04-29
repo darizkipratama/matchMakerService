@@ -76,7 +76,7 @@ class ActivityController extends Controller
 
         $newActivity->save();
 
-        return response()->json($newActivity, 200, Response::HTTP_CREATED);
+        return $newActivity;
     }
 
     /**
