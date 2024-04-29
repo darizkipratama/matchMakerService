@@ -103,7 +103,7 @@ class ActivityController extends Controller
             'from_profile_id' => 'required',
         ]);
         $likedPeoples = Activity::where('activity','like')
-            ->where('from_profile_id',$request->from_profile_id)
+            ->where('to_profile_id',$request->from_profile_id)
             ->get();
         return $likedPeoples;
     }
